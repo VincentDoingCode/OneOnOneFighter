@@ -5,8 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
-<body>
-    
+<body onload="initalize();">
+    <div id="player">
+        Player One
+        <div id="img"></div>
+        <div id="buttons">
+            <button>Attack</button>
+            <button>Defend</button>
+        </div>
+    </div>
+
+    <div id="computer">
+        Player 2
+        <div id="img2"></div>
+        <div id="stats">
+            Strength: <span id="computerStrength"></span>
+            Cunning: <span id="computerCunning"></span>
+            Speed: <span id="computerSpeed"></span>
+            Fatigue: <span id="computerFatigue"></span>
+        </div>
+        <div id="buttons">
+            <button>Attack</button>
+            <button>Defend</button>
+        </div>
+    </div>
 </body>
 </html>

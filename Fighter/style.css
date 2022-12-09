@@ -5,3 +5,19 @@ h1{
 body{
     background: url(img/background.png);
 }
+
+#player{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 150%;
+    float: left;
+}
+
+#computer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 150%;
+    float: right;
+}
