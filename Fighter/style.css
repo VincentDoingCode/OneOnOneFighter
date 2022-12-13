@@ -1,5 +1,6 @@
 h1{
     font-size: 400%;
+    text-align: center;
 }
 
 body{
@@ -20,4 +21,13 @@ body{
     justify-content: space-evenly;
     font-size: 150%;
     float: right;
+}
+
+.indexButton{
+    border-radius: 10px;
+    font-size: 150%;
+    margin-left: 46%;
+    padding: 10px;
+    padding-right: 35px;
+    padding-left: 35px;
 }

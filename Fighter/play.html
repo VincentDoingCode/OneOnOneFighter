@@ -12,9 +12,16 @@
     <div id="player">
         Player One
         <div id="img"></div>
+        <div id="stats">
+            Strength: <span id="player1Strength"></span>
+            Cunning: <span id="player1Cunning"></span>
+            Speed: <span id="player1Speed"></span>
+            Fatigue: <span id="player1Fatigue"></span>
+        </div>
         <div id="buttons">
-            <button>Attack</button>
-            <button>Defend</button>
+            <button onclick="damageDealt(1);">Attack</button>
+            <button onclick="onDefense(1);">Defend</button>
+            <button onclick="checkPlayerFinishingMove();">Finishing Move</button>
         </div>
     </div>
 
@@ -30,6 +37,7 @@
         <div id="buttons">
             <button>Attack</button>
             <button>Defend</button>
+            <button>Finishing Move</button>
         </div>
     </div>
 </body>
