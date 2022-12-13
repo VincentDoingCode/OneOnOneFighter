@@ -31,3 +31,7 @@ body{
     padding-right: 35px;
     padding-left: 35px;
 }
+
+.tablePlayer, .tableComp{
+    border: 2px solid bisque;
+}

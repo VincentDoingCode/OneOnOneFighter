@@ -79,9 +79,11 @@ function computerMove(){
     checkComputerFinishingMove();
     if(getRandomInteger(1,2) == 1){
         damageDealt(2);
+        addLogs(2, "Attack", compDamage);
     }
     else{
         onDefense(2);
+        addLogs(2, onComputerDefense, compDefense);
     }
 }
 
@@ -95,18 +97,23 @@ function onDefense(id){
     }
     getDefense(id);
     checkHitDefense();
+    if(id == 1){
+        addLogs(1,onPlayerDefense, playerDefense); 
+    }
     //testing to see if button changes
     // console.log(playerDefense);
     // console.log(compDefense);
 }
 function getDefense(id){
     if(id == 1){
+        
         if(onPlayerDefense == true){
             playerDefense = (playerCunning + playerSpeed);
         }
         else{
             playerDefense = (playerSpeed + getRandomInteger(1,6));
-        }    
+        }
+           
     }
     else{
         if(onComputerDefense){
@@ -165,7 +172,7 @@ function checkComputerFinishingMove(){
 }
 //Damage dealt to player or computer
 function damageDealt(id){
-    getDefense(id);
+    
     playerAttack = (playerStrength+playerCunning+playerSpeed)/getRandomInteger(1,3);
     compAttack = (compSpeed + compStrength + compSpeed)/getRandomInteger(1,3);
 
@@ -180,6 +187,7 @@ function damageDealt(id){
     //id 1 is damage done to computer aka player attacking
     if(id == 1){
         compFatigue -= playerDamage;
+        addLogs(1,"Attack", playerDamage);
         computerMove();
     }
     else{
@@ -190,6 +198,31 @@ function damageDealt(id){
     display();
 }
 
+function addLogs(id, command, commandValue){
+    var playerTable = document.getElementById("playerLog");
+    var computerTable = document.getElementById("computerLog");
+    var playerRow = playerTable.insertRow(-1);
+    var computerRow = computerTable.insertRow(-1);
+    var playerCell = playerRow.insertCell(-1);
+    var playerCell2 = playerRow.insertCell(-1);
+    var computerCell = computerRow.insertCell(-1);
+    var computerCell2 = computerRow.insertCell(-1);
+
+    if(command == true){
+        command = "Defending"
+    }
+    if(command == false){
+        command = "Not Defending"
+    }
+    if(id == 1){
+        playerCell.innerHTML = command;
+        playerCell2.innerHTML = commandValue;
+    }
+    else{
+        computerCell.innerHTML = command;
+        computerCell2.innerHTML = commandValue;
+    }
+}
 function getRandomInteger(lower, upper){
 	var multiplier = upper - (lower - 1);
 	var rnd = parseInt(Math.random() * multiplier) + lower;

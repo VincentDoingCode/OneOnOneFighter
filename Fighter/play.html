@@ -11,7 +11,7 @@
 <body onload="initalize();">
     <div id="player">
         Player One
-        <div id="img"></div>
+        <div id="img"><img src="img/silvally.png" width="300px"></div>
         <div id="stats">
             Strength: <span id="player1Strength"></span>
             Cunning: <span id="player1Cunning"></span>
@@ -23,11 +23,17 @@
             <button onclick="onDefense(1);">Defend</button>
             <button onclick="checkPlayerFinishingMove();">Finishing Move</button>
         </div>
+        <div class="tablePlayer">
+            <table id="playerLog">
+                <th>Player Log</th>
+                
+            </table>
+        </div>
     </div>
 
     <div id="computer">
         Player 2
-        <div id="img2"></div>
+        <div id="img2"><img src="img/charizard.png" width="400px"></div>
         <div id="stats">
             Strength: <span id="computerStrength"></span>
             Cunning: <span id="computerCunning"></span>
@@ -38,6 +44,12 @@
             <button>Attack</button>
             <button>Defend</button>
             <button>Finishing Move</button>
+        </div>
+        <div class="tableComp">
+            <table  id="computerLog">
+                <th>Computer Log</th>
+                
+            </table>
         </div>
     </div>
 </body>
